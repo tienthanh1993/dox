@@ -1,53 +1,91 @@
 # DOX framework
 
-- DOX is highly performant AGENTS.md hierarchy installed here
-- Agent must follow DOX instructions across any edits
+DOX is the project’s documentation and instruction hierarchy for coding agents.
 
-## Core Contract
+All work in this repository must follow the applicable DOX chain:
+- the root `AGENTS.md`
+- every parent `AGENTS.md` between the repository root and the target path
+- the nearest `AGENTS.md` that governs the files being changed
 
-- AGENTS.md files are binding work contracts for their subtrees
-- Work products, source materials, instructions, records, assets, and durable docs must stay understandable from the nearest applicable AGENTS.md plus every parent AGENTS.md above it
+Use this file for project-wide rules. Use child `AGENTS.md` files for narrower scopes.
 
-## Read Before Editing
+## Purpose
 
-1. Read the root AGENTS.md
-2. Identify every file or folder you expect to touch
-3. Walk from the repository root to each target path
-4. Read every AGENTS.md found along each route
-5. If a parent AGENTS.md lists a child AGENTS.md whose scope contains the path, read that child and continue from there
-6. Use the nearest AGENTS.md as the local contract and parent docs for repo-wide rules
-7. If docs conflict, the closer doc controls local work details, but no child doc may weaken DOX
+- Keep durable project instructions in version-controlled Markdown files that agents can read directly.
+- Keep repository knowledge understandable from the applicable DOX chain, not from chat history or unstated assumptions.
+- Keep local rules close to the code, docs, assets, or workflows they govern.
+- Keep documentation synchronized with meaningful changes.
 
-Do not rely on memory. Re-read the applicable DOX chain in the current session before editing.
+## Precedence
 
-## Update After Editing
+- User instructions in the active chat/task override `AGENTS.md` files.
+- Within the repository, the nearest applicable `AGENTS.md` controls local work.
+- Parent `AGENTS.md` files still apply unless a closer file gives a more specific local rule.
+- No child `AGENTS.md` may weaken or contradict this DOX framework. If a local exception is required, document it explicitly in the nearest parent that owns the exception.
 
-Every meaningful change requires a DOX pass before the task is done.
+## Core contract
 
-Update the closest owning AGENTS.md when a change affects:
+- `AGENTS.md` files are durable workflow contracts for their scope.
+- Agents must re-read the applicable DOX chain in the current session before editing.
+- Do not rely on memory for repository rules.
+- Every durable work product must remain understandable from the applicable DOX chain plus the repository contents it references.
 
+## Read before editing
+
+Before making changes:
+
+1. Read the root `AGENTS.md`.
+2. Identify the files and directories you expect to inspect, create, move, rename, or delete.
+3. For each target path, walk from the repository root to that path.
+4. Read every `AGENTS.md` encountered on that path.
+5. Apply the nearest `AGENTS.md` as the local contract and all parent `AGENTS.md` files as inherited context.
+6. If the applicable Child DOX Index is missing, stale, or incomplete, update it before or as part of the work when the repository is available to scan.
+
+## Maintain DOX after changes
+
+Perform a DOX pass after every meaningful change.
+
+Update the nearest owning `AGENTS.md` when a change affects:
 - purpose, scope, ownership, or responsibilities
-- durable structure, contracts, workflows, or operating rules
-- required inputs, outputs, permissions, constraints, side effects, or artifacts
+- durable structure, architecture, boundaries, or workflows
+- required inputs, outputs, permissions, constraints, side effects, or generated artifacts
 - user preferences about behavior, communication, process, organization, or quality
-- AGENTS.md creation, deletion, move, rename, or index contents
+- creation, deletion, move, rename, or re-scoping of any `AGENTS.md`
 
-Update parent docs when parent-level structure, ownership, workflow, or child index changes. Update child docs when parent changes alter local rules. Remove stale or contradictory text immediately. Small edits that do not change behavior or contracts may leave docs unchanged, but the DOX pass still must happen.
+Update parent `AGENTS.md` files when parent-owned structure or child indexes change.
+Update child `AGENTS.md` files when parent changes alter local rules.
+Remove stale or contradictory instructions immediately.
 
-## Hierarchy
+Small edits that do not change durable behavior may leave `AGENTS.md` files unchanged, but the DOX pass is still required.
 
-- Root AGENTS.md is the DOX rail: project-wide instructions, global preferences, durable workflow rules, and the top-level Child DOX Index
-- Child AGENTS.md files own domain-specific instructions and their own Child DOX Index
-- Each parent explains what its direct children cover and what stays owned by the parent
-- The closer a doc is to the work, the more specific and practical it must be
+## Root responsibilities
 
-## Child Doc Shape
+The root `AGENTS.md` owns:
+- project-wide instructions and constraints
+- repository-wide workflow expectations
+- durable documentation policy
+- the top-level Child DOX Index
 
-- Create a child AGENTS.md when a folder becomes a durable boundary with its own purpose, rules, responsibilities, workflow, materials, or quality standards
-- Work Guidance must reflect the current standards of the project or user instructions; if there are no specific standards or instructions yet, leave it empty
-- Verification must reflect an existing check; if no verification framework exists yet, leave it empty and update it when one exists
+The root `AGENTS.md` should stay concise.
+Put local commands, stack details, architecture notes, and workflow specifics in the closest child `AGENTS.md` that owns them.
 
-Default section order:
+## Child document rules
+
+Create a child `AGENTS.md` when a directory becomes a durable boundary with its own:
+- purpose
+- ownership
+- local contracts
+- workflow or operating rules
+- inputs or outputs
+- verification expectations
+- artifacts or assets
+
+Each parent `AGENTS.md` must describe:
+- which direct children exist
+- what each direct child owns
+- what remains owned by the parent
+
+Default section order for child `AGENTS.md` files:
 - Purpose
 - Ownership
 - Local Contracts
@@ -55,29 +93,43 @@ Default section order:
 - Verification
 - Child DOX Index
 
+If a section has no current content:
+- leave `Work Guidance` empty rather than inventing preferences
+- leave `Verification` empty rather than inventing checks
+
 ## Style
 
-- Keep docs concise, current, and operational
-- Document stable contracts, not diary entries
-- Put broad rules in parent docs and concrete details in child docs
-- Prefer direct bullets with explicit names
-- Do not duplicate rules across many files unless each scope needs a local version
-- Delete stale notes instead of explaining history
-- Trim obvious statements, repeated rules, misplaced detail, and warnings for risks that no longer exist
+- Keep instructions concise, specific, and testable.
+- Prefer direct bullets, short sections, and explicit file or directory names.
+- Use active voice and concrete verbs.
+- Document stable rules and reusable workflows, not temporary task history.
+- Put broad policy in parent docs and concrete practice in child docs.
+- Avoid repeating the same rule across many files unless each scope truly needs a local copy.
+- Reference canonical files and paths instead of duplicating large bodies of text.
+- Delete stale guidance instead of preserving historical notes.
 
 ## Closeout
 
-1. Re-check changed paths against the DOX chain
-2. Update nearest owning docs and any affected parents or children
-3. Refresh every affected Child DOX Index
-4. Remove stale or contradictory text
-5. Run existing verification when relevant
-6. Report any docs intentionally left unchanged and why
+Before finishing a task:
 
-## User Preferences
+1. Re-check the changed paths against the applicable DOX chain.
+2. Update every affected `AGENTS.md`, including parents, children, and indexes.
+3. Remove stale or contradictory guidance.
+4. Run the existing verification commands for the changed scope when such commands exist.
+5. Report which `AGENTS.md` files were updated.
+6. Report any applicable `AGENTS.md` files intentionally left unchanged and why.
 
-When the user requests a durable behavior change, record it here or in the relevant child AGENTS.md
+## User preferences
+
+Record durable user preferences here or in the nearest child `AGENTS.md` that owns them.
+
+Current durable preferences:
+- Preferred language: en-US
 
 ## Child DOX Index
 
-This project is not yet indexed. Before continuing you must scan the project, build the DOX tree and replace this message with the actual index. Go deep and scan files recursively to properly evaluate complexity and create nested DOX files where needed.
+Status: pending initial repository scan.
+
+Before substantive repository work continues, replace this placeholder with the actual top-level DOX index based on a recursive scan of the repository.
+
+The index must list each direct child boundary owned by this file, what it covers, and where deeper child `AGENTS.md` files exist.
